@@ -1,4 +1,5 @@
-FROM gitpod/workspace-full
+FROM gitpod/workspace-full:latest
 USER gitpod
-RUN curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh && \
+RUN sudo apt-get install -y zsh && \
+    curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | zsh && \
     chsh -s $(which zsh)

@@ -2,6 +2,3 @@ image:
   file: .gitpod.Dockerfile
 tasks:
   - command: zsh
-vscode:
-  extensions:
-ports:
