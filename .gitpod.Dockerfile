@@ -16,6 +16,6 @@ RUN sudo wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-py38_4.9.2-
     sudo find /opt/conda/ -follow -type f -name '*.a' -delete && \
     sudo find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
     sudo /opt/conda/bin/conda clean -afy && \
-    # sudo wget --quiet https://public-bucket-all-purpose.s3.fr-par.scw.cloud/data/creditcard.csv && \
-    sudo mv /home/gitpod/creditcard.csv /workspace/Gitpod-myBase/creditcard.csv && \
+    sudo wget --quiet https://public-bucket-all-purpose.s3.fr-par.scw.cloud/data/creditcard.csv && \
+    # sudo mv /home/gitpod/creditcard.csv /workspace/Gitpod-myBase/creditcard.csv && \
     pip install pipenv
