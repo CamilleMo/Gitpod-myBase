@@ -12,6 +12,7 @@ with mlflow.start_run():
     mlflow.log_metric("my_metric", 42)
     for i in range(100):
         mlflow.log_metric("my_evolving_metric", i + random.randint(-1, 1))
+    ####### Dummy Plot #########
     x1 = np.linspace(0.0, 5.0)
     x2 = np.linspace(0.0, 2.0)
     y1 = np.cos(2 * np.pi * x1) * np.exp(-x1)
@@ -23,6 +24,7 @@ with mlflow.start_run():
     ax2.plot(x2, y2, '.-')
     ax2.set_xlabel('time (s)')
     ax2.set_ylabel('Undamped')
+    ############################
     mlflow.log_figure(fig, "my_plot.svg")
     # artifacts
     result = "This is an example artifact, an output from the run that should be kept"
