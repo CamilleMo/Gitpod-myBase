@@ -13,7 +13,7 @@ ARG CONDA_MD5=122c8c9beb51e124ab32a0fa6426c656
 RUN sudo wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh -O miniconda.sh && \
     sudo mkdir -p /opt && \
     sudo sh miniconda.sh -b -p /opt/conda && \
-    sudo rm miniconda.sh miniconda.md5 && \
+    sudo rm miniconda.sh && \
     sudo ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo "conda activate base" >> ~/.bashrc && \
