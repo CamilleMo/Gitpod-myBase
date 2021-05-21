@@ -1,3 +1,4 @@
+
 image:
   file: .gitpod.Dockerfile
 ports:
@@ -7,3 +8,7 @@ ports:
 tasks:
   - init: pipenv sync
     command: pipenv run mlflow ui
+
+vscode:
+  extensions:
+    - ms-python.python
