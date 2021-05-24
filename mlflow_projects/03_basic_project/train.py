@@ -3,7 +3,6 @@ import numpy as np
 
 import mlflow
 
-#mlflow.set_experiment("basic_project")
 if __name__ == "__main__":
     np.random.seed(26)
 

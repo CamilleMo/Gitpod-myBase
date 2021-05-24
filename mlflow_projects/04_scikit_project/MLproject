@@ -1,4 +1,4 @@
-name: basic_project
+name: scikit_project
 
 conda_env: conda.yaml
 
