@@ -15,7 +15,8 @@ RUN sudo apt-get update && sudo apt-get install -y zsh && \
      echo "conda activate base" >> ~/.bashrc && \
      sudo find /opt/conda/ -follow -type f -name '*.a' -delete && \
      sudo find /opt/conda/ -follow -type f -name '*.js.map' -delete && \
-     sudo /opt/conda/bin/conda clean -afy
+     sudo /opt/conda/bin/conda clean -afy && \
+     sudo chmod -R 777 /opt
 #     sudo wget --quiet https://public-bucket-all-purpose.s3.fr-par.scw.cloud/data/creditcard.csv && \
 #     # sudo mv /home/gitpod/creditcard.csv /workspace/Gitpod-myBase/creditcard.csv && \
 #     pip install pipenv
