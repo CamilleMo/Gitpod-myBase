@@ -7,6 +7,7 @@ import mlflow.sklearn
 
 if __name__ == "__main__":
     np.random.seed(26)
+    n_points = 100
 
     fit_intercept = True if sys.argv[1]=="true" else False
 
@@ -20,3 +21,7 @@ if __name__ == "__main__":
 
     reg = LinearRegression(fit_intercept=fit_intercept).fit(BigX, Y)
     print(reg.coef_)
+    mlflow.log_metrics({"B1": reg.coef_[0], "B2": reg.coef_[1], "B3": reg.coef_[2]})
+    if reg.intercept_:
+        print(reg.intercept_)
+        mlflow.log_metric("intercept", reg.intercept_)

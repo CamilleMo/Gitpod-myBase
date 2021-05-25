@@ -5,5 +5,5 @@ conda_env: conda.yaml
 entry_points:
   main:
     parameters:
-      intercept: {type: string, default false}
+      intercept: {type: string, default: false}
     command: "python train.py {intercept}"
