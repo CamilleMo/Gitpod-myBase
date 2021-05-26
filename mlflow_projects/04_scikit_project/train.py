@@ -5,6 +5,8 @@ from sklearn.linear_model import LinearRegression
 import mlflow
 import mlflow.sklearn
 
+mlflow.set_tracking_uri("http://localhost:5000")
+
 if __name__ == "__main__":
     np.random.seed(26)
     n_points = 100
@@ -25,3 +27,4 @@ if __name__ == "__main__":
     if reg.intercept_:
         print(reg.intercept_)
         mlflow.log_metric("intercept", reg.intercept_)
+    mlflow.sklearn.log_model(reg, "model")

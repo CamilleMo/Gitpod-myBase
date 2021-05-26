@@ -3,6 +3,8 @@ import numpy as np
 
 import mlflow
 
+mlflow.set_tracking_uri("http://localhost:5000")
+
 if __name__ == "__main__":
     np.random.seed(26)
 

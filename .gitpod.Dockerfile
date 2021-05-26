@@ -11,7 +11,7 @@ RUN sudo apt-get update && sudo apt-get install -y zsh && \
      sudo sh miniconda.sh -b -p /opt/conda && \
      sudo rm miniconda.sh && \
      sudo ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
-     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
+     # echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
      # echo "conda activate base" >> ~/.bashrc && \
      sudo find /opt/conda/ -follow -type f -name '*.a' -delete && \
      sudo find /opt/conda/ -follow -type f -name '*.js.map' -delete && \

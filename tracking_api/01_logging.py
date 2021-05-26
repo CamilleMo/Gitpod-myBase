@@ -5,6 +5,8 @@ import mlflow
 import numpy as np
 import matplotlib.pyplot as plt
 
+mlflow.set_tracking_uri("http://localhost:5000")
+
 mlflow.set_experiment("basic_experiment")
 with mlflow.start_run():
     mlflow.log_param("my_parameter", 0.05)
