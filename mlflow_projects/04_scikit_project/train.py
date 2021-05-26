@@ -7,6 +7,8 @@ import mlflow.sklearn
 
 mlflow.set_tracking_uri("http://localhost:5000")
 
+n_points=100
+
 if __name__ == "__main__":
     np.random.seed(26)
 
@@ -26,4 +28,5 @@ if __name__ == "__main__":
     if reg.intercept_:
         print(reg.intercept_)
         mlflow.log_metric("intercept", reg.intercept_)
-    mlflow.sklearn.log_model(reg, "model")
+    print(mlflow.get_artifact_uri())
+    mlflow.sklearn.log_model(reg, "lin_reg_model", registered_model_name="sk-learn-lin-reg-model")
