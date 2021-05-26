@@ -9,7 +9,6 @@ mlflow.set_tracking_uri("http://localhost:5000")
 
 if __name__ == "__main__":
     np.random.seed(26)
-    n_points = 100
 
     fit_intercept = True if sys.argv[1]=="true" else False
 
