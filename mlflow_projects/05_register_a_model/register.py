@@ -1,7 +1,7 @@
 import mlflow
-from mlflow.tracking import MlflowClient
+# from mlflow.tracking import MlflowClient
 
-client = MlflowClient("http://localhost:5000")
+# client = MlflowClient("http://localhost:5000")
 
 experiment_name = "scikit_project"
 current_experiment=dict(mlflow.get_experiment_by_name(experiment_name))
@@ -17,8 +17,10 @@ print("ID: ", best_run_id)
 print("=" * 40)
 print("Registration of the model :")
 try:
-    model_name = "LinearRegressionModel"
-    mlflow.register_model(f"runs:/{best_run_id}", model_name)
+    model_name_in_artifacts = "lin_reg_model"
+    model_name_to_deploy = "LinearRegressionModel"
+    mlflow.register_model(f"runs:/{best_run_id}/{model_name_in_artifacts}",
+        model_name_to_deploy)
 except Exception as e:
     print(e)
 
