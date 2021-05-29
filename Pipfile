@@ -9,6 +9,7 @@ pandas = "*"
 matplotlib = "*"
 sklearn = "*"
 mlflow = "*"
+azureml-core = "*"
 
 [dev-packages]
 

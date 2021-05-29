@@ -1,7 +1,4 @@
 import mlflow
-# from mlflow.tracking import MlflowClient
-
-# client = MlflowClient("http://localhost:5000")
 
 experiment_name = "scikit_project"
 current_experiment=dict(mlflow.get_experiment_by_name(experiment_name))
