@@ -18,7 +18,3 @@ RUN sudo apt-get update && sudo apt-get install -y zsh && \
      sudo /opt/conda/bin/conda clean -afy && \
      sudo chmod -R 777 /opt && \
      export MLFLOW_TRACKING_URI=http://localhost:5000
-     # export MLFLOW_TRACKING_URI=sqlite:///mlflow.db
-#     sudo wget --quiet https://public-bucket-all-purpose.s3.fr-par.scw.cloud/data/creditcard.csv && \
-#     # sudo mv /home/gitpod/creditcard.csv /workspace/Gitpod-myBase/creditcard.csv && \
-#     pip install pipenv
