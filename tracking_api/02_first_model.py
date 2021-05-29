@@ -3,6 +3,8 @@ import numpy as np
 
 import mlflow
 
+mlflow.set_tracking_uri("http://localhost:5000")
+
 mlflow.set_experiment("first_model")
 with mlflow.start_run():
     np.random.seed(26)

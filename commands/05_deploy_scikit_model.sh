@@ -1,3 +1,4 @@
+export MLFLOW_TRACKING_URI=http://localhost:5000
 pipenv run python mlflow_projects/05_register_a_model/register.py 
 pipenv run python mlflow_projects/05_register_a_model/deploy_uat.py
 export MLFLOW_TRACKING_URI=sqlite:///mlflow.db
