@@ -1,6 +1,7 @@
 import sys
 import numpy as np
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error, r2_score
 
 import mlflow
 import mlflow.sklearn
@@ -23,10 +24,10 @@ if __name__ == "__main__":
     BigX = np.array([x1, x2, x3]).T
 
     reg = LinearRegression(fit_intercept=fit_intercept).fit(BigX, Y)
-    print(reg.coef_)
-    mlflow.log_metrics({"B1": reg.coef_[0], "B2": reg.coef_[1], "B3": reg.coef_[2]})
+    print("estimated coefficients : ", *reg.coef_)
     if reg.intercept_:
-        print(reg.intercept_)
-        mlflow.log_metric("intercept", reg.intercept_)
-    print(mlflow.get_artifact_uri())
-    mlflow.sklearn.log_model(reg, "lin_reg_model", registered_model_name="sk-learn-lin-reg-model")
+        print("estimated intercept : ", reg.intercept_)
+    y_hat = reg.predict(BigX)
+    mlflow.log_metric("training_r2", r2_score(Y, y_hat))
+    mlflow.log_metric("training_mse", mean_squared_error(Y, y_hat))
+    mlflow.sklearn.log_model(reg, "lin_reg_model")
